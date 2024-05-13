@@ -1,7 +1,6 @@
 resul = 0
 sair = 1
 
-#-----Funções-----#
 
 def calc_soma(num1,num2):
     return num1+num2
@@ -34,27 +33,16 @@ def somente_num(prompt):    #Mesma coisa que o anterior mas somente para letras
         except ValueError:
             print("Digito invalido, tente por numeros")
 
-#-----Fim_Funções-----#
-
-
-#-----Inicio_Menu-----#
-
-sair = 1
+def menu(somente_opcao):
+    sair = 1
 while  sair == 1:
     calc = somente_opcao("Escolha a opção:\n 1)Soma\n 2)Subtração\n 3)Multiplicação\n 4)Divisão\n 0)Sair\n")
     if calc == 0:
         print("Encerrando Calculo")
         sair = 0
         break
-
-
     num1 = somente_num("Digite o Primeiro Numero: ")
     num2 = somente_num("Digite o segundo Numero: ")
-
-#-----Fim_Menu-----#
-
-#-----Programa_Interno-----#
-
     if calc == 1:
         resul = calc_soma(num1,num2)
         calc = "+"
@@ -73,10 +61,8 @@ while  sair == 1:
     else:
         print("Opção inválida, digite novamente.")
         continue
-
-    #-----Fim_Programa_Interno-----#
-
-    #-----Resultado-----#
     print("-" * 80)
     print(f"A operação foi: {num1} {calc} {num2} = {resul}")
     print("-" * 80)
+
+menu(somente_opcao)
